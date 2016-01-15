@@ -1,0 +1,34 @@
+// This file implements a MOP for java. 
+
+class Accessor {
+  name:Str;
+  accessor:Str;
+  Accessor(name:Str,accessor:Str) {
+    self.name := name;
+    self.accessor := accessor;
+  }
+}
+
+class JavaClass extends Class {
+  javaName:Str;
+  accessors:[Accessor];
+  new():StaticSelf {
+    javaName.javaObj(self);
+  }
+  get2(target:StaticSelf,name:Str):Obj {
+    find a:Accessor in accessors when name = a.name {
+      javaName.access(a.accessor,target)
+    } else null;
+  }
+}
+
+class TestClass metaclass JavaClass {
+  x:Int;
+  javaName = 'test.TestClass';
+  accessors = [Accessor.new('x','getX')];
+}
+
+test():TestClass {
+  let o:TestClass = TestClass.new()
+  in o;
+}

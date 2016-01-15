@@ -1,0 +1,12 @@
+digraph {
+  rankdir="LR"
+0[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Display</font></td></tr></table>>,shape=none];
+2[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Node</font></td></tr></table>>,shape=none];
+1[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Edge</font></td></tr></table>>,shape=none];
+3[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Graph</font></td></tr></table>>,shape=none];
+2 -> 0[penwidth="2" arrowhead=vee label=<<font face="INCONSOLATA">display</font>>];
+1 -> 2[penwidth="2" arrowhead=vee label=<<font face="INCONSOLATA">source</font>>];
+1 -> 2[penwidth="2" arrowhead=vee label=<<font face="INCONSOLATA">target</font>>];
+3 -> 2[penwidth="2" label=<<font face="INCONSOLATA">*nodes</font>>];
+3 -> 1[penwidth="2" label=<<font face="INCONSOLATA">*edges</font>>];
+}

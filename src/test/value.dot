@@ -1,0 +1,31 @@
+digraph {
+  rankdir="LR"
+0[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">Obj</font></td></tr><tr><td bgcolor="tomato" colspan="2"> interface </td></tr>static <tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">get</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">(String)-&gt;Obj</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">get</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">(Obj,String)-&gt;Obj</font></td></tr>static <tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">set</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">(String,Obj)-&gt;Obj</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">set</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">(Obj,String,Obj)-&gt;Obj</font></td></tr>static <tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">of</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">()-&gt;Obj</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">send</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">(Obj,String,Obj[])-&gt;Obj</font></td></tr>static <tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">send</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">(String,Obj[])-&gt;Obj</font></td></tr>static <tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">slots</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">()-&gt;Obj</font></td></tr></table>>,shape=none];
+2[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">ConcreteObj</font></td></tr></table>>,shape=none];
+3[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">Slot</font></td></tr><tr><td colspan="2" bgcolor="mediumseagreen">name:String</td></tr></table>>,shape=none];
+4[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">Atom</font></td></tr></table>>,shape=none];
+5[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">Int</font></td></tr><tr><td colspan="2" bgcolor="mediumseagreen">value:int</td></tr></table>>,shape=none];
+6[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">Str</font></td></tr><tr><td colspan="2" bgcolor="mediumseagreen">value:String</td></tr></table>>,shape=none];
+7[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">Bool</font></td></tr><tr><td colspan="2" bgcolor="mediumseagreen">value:boolean</td></tr></table>>,shape=none];
+8[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">Float</font></td></tr><tr><td colspan="2" bgcolor="mediumseagreen">value:double</td></tr></table>>,shape=none];
+9[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">ConcreteFun</font></td></tr><tr><td colspan="2" bgcolor="mediumseagreen">name:String</td></tr><tr><td colspan="2" bgcolor="mediumseagreen">arity:int</td></tr><tr><td colspan="2" bgcolor="mediumseagreen">args:String[]</td></tr><tr><td colspan="2" bgcolor="mediumseagreen">isVarArgs:boolean</td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">args</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">()-&gt;Obj</font></td></tr></table>>,shape=none];
+10[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">F</font></td></tr><tr><td bgcolor="tomato" colspan="2"> interface </td></tr></table>>,shape=none];
+11[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">F1</font></td></tr><tr><td bgcolor="tomato" colspan="2"> interface </td></tr>static <tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">apply</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">(Obj)-&gt;Obj</font></td></tr></table>>,shape=none];
+1[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">Serializable</font></td></tr><tr><td bgcolor="tomato" colspan="2"> interface </td></tr></table>>,shape=none];
+0 -> 1[penwidth="2" style=dotted arrowhead=vee];
+2 -> 0[penwidth="2"  arrowhead=vee label="type"];
+2 -> 0[penwidth="2" style=dotted arrowhead=vee];
+3 -> 0[penwidth="2"  arrowhead=vee label="value"];
+3 -> 0[penwidth="2" style=dotted arrowhead=vee];
+4 -> 0[penwidth="2"  arrowhead=vee label="type"];
+4 -> 3[penwidth="2"  arrowhead=vee label="*slots"];
+4 -> 0[penwidth="2" style=dotted arrowhead=vee];
+5 -> 4[penwidth="2" arrowhead=empty];
+6 -> 4[penwidth="2" arrowhead=empty];
+7 -> 4[penwidth="2" arrowhead=empty];
+8 -> 4[penwidth="2" arrowhead=empty];
+9 -> 10[penwidth="2"  arrowhead=vee label="f"];
+9 -> 4[penwidth="2" arrowhead=empty];
+10 -> 1[penwidth="2" style=dotted arrowhead=vee];
+11 -> 10[penwidth="2" style=dotted arrowhead=vee];
+}

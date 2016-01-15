@@ -1,0 +1,76 @@
+// This file implements a MOP for static variables. 
+
+class StaticMOP extends Class {
+
+  // A utility class that is used by Static to introduce
+  // operations to instances...
+  
+  typeCheckGet(name:Str):Obj =
+    find a:Attribute in self.of().attributes when a.name = name {
+      a.type
+    } else super.typeCheckGet(name);
+    
+  typeCheckSet(name:Str,type:Classifier):Classifier =
+    find a:Attribute in self.of().attributes when a.name = name {
+      if type = a.type
+      then self
+      else null
+    } else super.typeCheckSet(name,type);
+  
+  get(target:Obj,name:Str):Obj =
+    find a:Attribute in self.of().attributes when a.name = name {
+      self.get(name)
+    } else super.get(target,name);
+    
+  set(target:Obj,name:Str,value:Obj):Self =
+    find a:Attribute in self.of().attributes when a.name = name {
+      self.set(name,value)
+    } else super.set(target,name,value);
+    
+}
+
+class Static extends Class {
+
+  // Instances of this class have attributes that whose slots
+  // are shared by all instances of the static class.
+  
+  Static(name:Str,staticAtts:[Attribute],ignore:[Class]) {
+  
+    // Note that we will ignore the supers that is supplied
+    // by the class syntax construct (it should be [Obj]).
+    
+    self.name := name;
+    self.attributes := staticAtts;
+    
+    // Ensure that instances of Static are meta-classes with
+    // the correct MOP...
+    
+    self.supers := [StaticMOP];
+  }
+  
+}
+
+class ProductType metaclass Static {
+  minPrice:Int;
+  maxPrice:Int;
+}
+
+class Printer metaclass ProductType {
+  printerId:Str;
+  minPrice = 100;
+  maxPrice = 200;
+  Printer(printerId:Str) {
+    self.printerId := printerId;
+    self.toDiagram();
+    self;
+  }
+  toDiagram():Self {
+    let o:Package = Package.new('o',[],[Obj])
+    in {
+      o.objects := [self];
+      o.toDiagram('Printer',Kernel.objects.remove(Class).remove(Classifier).remove(Int).remove(Str));
+    }
+  }
+}
+
+test():Obj = Printer.new('p1')

@@ -1,0 +1,41 @@
+// This file implements a MOP for simple tables. 
+
+TableStorage(valueType:Classifier):Class = Class.new('Storage('+valueType.name+')',[Attribute.new('storage',ListOf.new(valueType))],[Obj])
+  
+class Table extends Class {
+
+  valueType:Classifier;
+  
+  Table(valueType:Classifier) {
+    self.valueType := valueType;
+    self.name := 'Table(' + valueType.name + ')';
+    self.attributes := [];
+    self.supers := [TableStorage(valueType)];
+  }
+  
+  typeCheckGet(name:Str):Classifier = valueType;
+    
+  typeCheckSet(name:Str,type:Classifier):Classifier =
+    if type = valueType
+    then self
+    else null;
+  
+  get(target:Obj,name:Str):Obj =
+    if name = 'storage'
+    then super.get(target,name)
+    else 
+      find s:Slot in target.storage when s.name = name {
+        s.value
+      } else null;
+    
+  set(target:Obj,name:Str,value:Obj):Self =
+    if name = 'storage'
+    then super.set(target,name,value)
+    else
+      find s:Slot in target.storage when s.name = name {
+        s.value := value
+      } else target.storage := target.storage.cons(Slot.new(name,value));
+  
+}
+
+test():Table = Table.new(Int)

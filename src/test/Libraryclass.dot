@@ -1,0 +1,23 @@
+digraph {
+  rankdir="LR"
+0[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">Library</font></td></tr><tr> <td bgcolor="mediumseagreen"><font point-size="10" face="INCONSOLATA">borrow</font></td><td bgcolor="mediumseagreen"><font point-size="10" face="INCONSOLATA">(Obj,Obj)-&gt;Obj</font></td></tr></table>>,shape=none];
+1[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">DBClass</font></td></tr><tr> <td bgcolor="mediumseagreen"><font point-size="10" face="INCONSOLATA">slots</font></td><td bgcolor="mediumseagreen"><font point-size="10" face="INCONSOLATA">(Obj)-&gt;Obj</font></td></tr><tr> <td bgcolor="mediumseagreen"><font point-size="10" face="INCONSOLATA">set</font></td><td bgcolor="mediumseagreen"><font point-size="10" face="INCONSOLATA">(Obj,Obj,Obj)-&gt;Obj</font></td></tr><tr> <td bgcolor="mediumseagreen"><font point-size="10" face="INCONSOLATA">get</font></td><td bgcolor="mediumseagreen"><font point-size="10" face="INCONSOLATA">(Obj,Obj)-&gt;Obj</font></td></tr><tr> <td bgcolor="mediumseagreen"><font point-size="10" face="INCONSOLATA">new</font></td><td bgcolor="mediumseagreen"><font point-size="10" face="INCONSOLATA">(Obj)-&gt;Obj</font></td></tr></table>>,shape=box];
+2[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">Book</font></td></tr><tr> <td colspan="2" bgcolor="LemonChiffon"><font point-size="10" face="INCONSOLATA">Book[name]</font></td></tr></table>>,shape=none];
+3[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">NamedElement</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">name</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">Str</font></td></tr></table>>,shape=none];
+4[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="white" colspan="2"><font face="INCONSOLATA" point-size="15">Container</font></td></tr></table>>,shape=none];
+5[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">Reader</font></td></tr><tr> <td colspan="2" bgcolor="LemonChiffon"><font point-size="10" face="INCONSOLATA">Reader[name]</font></td></tr></table>>,shape=none];
+6[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">Borrows</font></td></tr><tr> <td colspan="2" bgcolor="LemonChiffon"><font point-size="10" face="INCONSOLATA">Borrows[reader,book]</font></td></tr></table>>,shape=none];
+0 -> 1[penwidth="2" style=dashed arrowhead=vee];
+2 -> 1[penwidth="2" style=dashed arrowhead=vee];
+2 -> 3[penwidth="2" arrowhead=empty];
+0 -> 2[penwidth="2" label=<<font face="INCONSOLATA">::books</font>>];
+0 -> 4[penwidth="2" arrowhead=empty];
+5 -> 1[penwidth="2" style=dashed arrowhead=vee];
+5 -> 3[penwidth="2" arrowhead=empty];
+0 -> 5[penwidth="2" label=<<font face="INCONSOLATA">::readers</font>>];
+0 -> 4[penwidth="2" arrowhead=empty];
+6 -> 2[penwidth="2" arrowhead=vee label=<<font face="INCONSOLATA">book</font>>];
+6 -> 5[penwidth="2" arrowhead=vee label=<<font face="INCONSOLATA">reader</font>>];
+6 -> 1[penwidth="2" style=dashed arrowhead=vee];
+0 -> 6[penwidth="2" label=<<font face="INCONSOLATA">*borrows</font>>];
+}

@@ -1,0 +1,20 @@
+digraph {
+  rankdir="LR"
+0[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">PL_Attribute</font></td></tr></table>>,shape=none];
+1[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Class</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">daemons</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">[Function]</font></td></tr></table>>,shape=box];
+2[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Attribute</font></td></tr></table>>,shape=none];
+3[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">TypedElement</font></td></tr></table>>,shape=none];
+4[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">PL_Meta_Class</font></td></tr></table>>,shape=box];
+5[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">PL_Package</font></td></tr></table>>,shape=box];
+6[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Package</font></td></tr></table>>,shape=box];
+1 -> 1[penwidth="2" style=dashed arrowhead=vee];
+2 -> 3[penwidth="2" arrowhead=empty];
+1 -> 2[penwidth="2" label=<<font face="INCONSOLATA">::attributes$</font>>];
+0 -> 2[penwidth="2" arrowhead=empty];
+4 -> 0[penwidth="2" label=<<font face="INCONSOLATA">::attributes^</font>>];
+4 -> 1[penwidth="2" arrowhead=empty];
+5 -> 4[penwidth="2" label=<<font face="INCONSOLATA">::objects^</font>>];
+6 -> 6[penwidth="2" label=<<font face="INCONSOLATA">::superPackages</font>>];
+6 -> 1[penwidth="2" arrowhead=empty];
+5 -> 6[penwidth="2" arrowhead=empty];
+}

@@ -1,0 +1,22 @@
+digraph {
+  rankdir="LR"
+0[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Point</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">names</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">[x,y]</font></td></tr></table>>,shape=none];
+2[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Int</font></td></tr></table>>,shape=none];
+1[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Array(Int)</font></td></tr></table>>,shape=box];
+4[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="white" colspan="2"><font face="INCONSOLATA" point-size="15">Classifier</font></td></tr></table>>,shape=box];
+5[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Class</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">daemons</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">[Function]</font></td></tr></table>>,shape=box];
+3[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Array</font></td></tr></table>>,shape=box];
+6[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">AType</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">names</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">[Str]</font></td></tr></table>>,shape=box];
+7[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="0"><tr><td bgcolor="violet" colspan="2"><font face="INCONSOLATA" point-size="15"> :Point</font></td></tr><tr> <td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">y</font></td><td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">100</font></td></tr><tr> <td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">x</font></td><td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">100</font></td></tr></table>>,shape=none];
+1 -> 2[penwidth="2" arrowhead=vee label=type];
+5 -> 5[penwidth="2" style=dashed arrowhead=vee];
+5 -> 4[penwidth="2" arrowhead=empty];
+4 -> 4[penwidth="2" label=<<font face="INCONSOLATA">::supers</font>>];
+3 -> 4[penwidth="2" arrowhead=vee label=<<font face="INCONSOLATA">type</font>>];
+3 -> 5[penwidth="2" arrowhead=empty];
+1 -> 3[penwidth="2" style=dashed arrowhead=vee];
+6 -> 5[penwidth="2" arrowhead=empty];
+1 -> 6[penwidth="2" arrowhead=empty];
+0 -> 1[penwidth="2" style=dashed arrowhead=vee];
+7 -> 0[penwidth="2" style=dashed arrowhead=vee];
+}

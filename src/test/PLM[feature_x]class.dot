@@ -1,0 +1,8 @@
+digraph {
+  rankdir="LR"
+0[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">Catalog</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">a</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">Str</font></td></tr></table>>,shape=none];
+1[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="tomato" colspan="2"><font face="INCONSOLATA" point-size="15">PL_Class</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">features</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">[Str]</font></td></tr></table>>,shape=box];
+2[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="2"><tr><td  bgcolor="gray" colspan="2"><font face="INCONSOLATA" point-size="15"> :Cons(Str)</font></td></tr><tr> <td><font color=red point-size="10" face="INCONSOLATA">head</font></td><td><font point-size="10" face="INCONSOLATA">feature_x</font></td></tr><tr> <td><font color=red point-size="10" face="INCONSOLATA">tail</font></td><td><font point-size="10" face="INCONSOLATA">[]</font></td></tr></table>>,shape=none];
+0 -> 1[penwidth="2" style=dashed arrowhead=vee];
+0 -> 2[penwidth="2" arrowhead=vee style=dotted label=features];
+}

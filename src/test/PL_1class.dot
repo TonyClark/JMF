@@ -1,0 +1,13 @@
+digraph {
+  rankdir="LR"
+1[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Catalog</font></td></tr></table>>,shape=none];
+2[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">PL_Meta_Class</font></td></tr></table>>,shape=box];
+3[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">PL_Attribute</font></td></tr></table>>,shape=none];
+0[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Catalog</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">features</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">[feature_y]</font></td></tr></table>>,shape=none];
+4[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">PL_Class</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">features</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">[Str]</font></td></tr></table>>,shape=box];
+2 -> 3[penwidth="2" label=<<font face="INCONSOLATA">::attributes^</font>>];
+1 -> 2[penwidth="2" style=dashed arrowhead=vee];
+0 -> 1[penwidth="2" arrowhead=vee label=metaclass];
+4 -> 2[penwidth="2" arrowhead=vee label=<<font face="INCONSOLATA">metaclass</font>>];
+0 -> 4[penwidth="2" style=dashed arrowhead=vee];
+}

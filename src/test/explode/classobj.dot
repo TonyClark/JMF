@@ -1,0 +1,5 @@
+digraph {
+  rankdir="LR"
+0[style=filled,fillcolor=black];
+0 -> 0[penwidth="2" style=dashed arrowhead=vee];
+}

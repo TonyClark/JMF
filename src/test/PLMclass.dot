@@ -1,0 +1,8 @@
+digraph {
+  rankdir="LR"
+0[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Catalog</font></td></tr></table>>,shape=none];
+1[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">PL_Meta_Class</font></td></tr></table>>,shape=box];
+2[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">PL_Attribute</font></td></tr></table>>,shape=none];
+1 -> 2[penwidth="2" label=<<font face="INCONSOLATA">::attributes^</font>>];
+0 -> 1[penwidth="2" style=dashed arrowhead=vee];
+}

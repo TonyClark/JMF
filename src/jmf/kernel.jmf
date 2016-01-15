@@ -1,0 +1,7 @@
+package Kernel {
+
+  class Obj {
+    get(n:Str):Obj = self.get(n);
+  }
+  
+}

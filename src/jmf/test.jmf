@@ -1,0 +1,35 @@
+class Point {
+  x:Int;
+  y:Int;
+  Point(x:Int,yval:Int) {
+    self.x := x;
+    y := yval;
+  }
+  setX(newx:Int):Self { x := newx; }
+  setY(newy:Int):Self { y := newy; }
+}
+
+class Shape {
+  points:[Point];
+  addPoint(p:Point):Self {
+    points := points.cons(p);
+  }
+  moveby(dx:Int,dy:Int):Null {
+   for(p:Point in points) {
+      p.setX(p.x + dx);
+      p.setY(p.y + dy);
+    }
+    self;
+  }
+}
+
+test1(x:Int,y:Int):Point = Point.new().setX(x).setY(y)
+
+test2():Shape = Shape.new().addPoint(Point.new()).moveby(100,200)
+
+test3():Package =
+  let p:Package = Package.new('P',[],[Obj])
+  in {
+    p.objects := [Point];
+    p.toDiagram();
+  }

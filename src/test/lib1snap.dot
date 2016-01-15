@@ -1,0 +1,16 @@
+digraph {
+  rankdir="LR"
+0[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="0"><tr><td bgcolor="violet" colspan="2"><font face="INCONSOLATA" point-size="15"> :Book</font></td></tr><tr> <td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">name</font></td><td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">B2</font></td></tr></table>>,shape=none];
+1[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="0"><tr><td bgcolor="violet" colspan="2"><font face="INCONSOLATA" point-size="15"> :Reader</font></td></tr><tr> <td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">name</font></td><td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">R2</font></td></tr></table>>,shape=none];
+2[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="0"><tr><td bgcolor="violet" colspan="2"><font face="INCONSOLATA" point-size="15"> :Book</font></td></tr><tr> <td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">name</font></td><td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">B1</font></td></tr></table>>,shape=none];
+3[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="0"><tr><td bgcolor="violet" colspan="2"><font face="INCONSOLATA" point-size="15"> :Reader</font></td></tr><tr> <td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">name</font></td><td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">R1</font></td></tr></table>>,shape=none];
+4[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="0"><tr><td bgcolor="violet" colspan="2"><font face="INCONSOLATA" point-size="15"> :Book</font></td></tr><tr> <td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">name</font></td><td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">B0</font></td></tr></table>>,shape=none];
+5[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="0"><tr><td bgcolor="violet" colspan="2"><font face="INCONSOLATA" point-size="15"> :Reader</font></td></tr><tr> <td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">name</font></td><td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">R0</font></td></tr></table>>,shape=none];
+6[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="0"><tr><td bgcolor="violet" colspan="2"><font face="INCONSOLATA" point-size="15"> :Library</font></td></tr><tr> <td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">borrows</font></td><td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">[]</font></td></tr></table>>,shape=none];
+6 -> 0[label=<books>];
+6 -> 2[label=<books>];
+6 -> 4[label=<books>];
+6 -> 1[label=<readers>];
+6 -> 3[label=<readers>];
+6 -> 5[label=<readers>];
+}

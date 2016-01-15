@@ -1,0 +1,15 @@
+digraph {
+  rankdir="LR"
+0[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Reader</font></td></tr></table>>,shape=none];
+1[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">NamedElement</font></td></tr></table>>,shape=none];
+2[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Book</font></td></tr></table>>,shape=none];
+3[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Borrows</font></td></tr></table>>,shape=none];
+4[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Library</font></td></tr></table>>,shape=none];
+0 -> 1[penwidth="2" arrowhead=empty];
+2 -> 1[penwidth="2" arrowhead=empty];
+3 -> 2[penwidth="2" arrowhead=vee label=<<font face="INCONSOLATA">book</font>>];
+3 -> 0[penwidth="2" arrowhead=vee label=<<font face="INCONSOLATA">reader</font>>];
+4 -> 2[penwidth="2" label=<<font face="INCONSOLATA">::books</font>>];
+4 -> 0[penwidth="2" label=<<font face="INCONSOLATA">::readers</font>>];
+4 -> 3[penwidth="2" label=<<font face="INCONSOLATA">*borrows</font>>];
+}

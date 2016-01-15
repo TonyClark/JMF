@@ -1,0 +1,32 @@
+package Dot {
+
+  class Node {
+  
+    id    : Int;
+    label : Str;
+    style : Str;
+    
+    Node(id,label,style);
+    
+  }
+  
+  class Edge {
+  
+    source : Int;
+    target : Int;
+    style  : Str;
+    
+    Edge(source,target);
+  
+  }
+  
+  class Graph {
+  
+    nodes   : [Node];
+    edges   : [Edge];
+    ids     : Table(Obj,Int);
+    counter : Int;
+    
+  }
+  
+}

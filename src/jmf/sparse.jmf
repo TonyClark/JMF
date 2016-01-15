@@ -1,0 +1,7 @@
+class SparseMeta extends Class {
+  storage:TableOf(Obj,TableOf(Str,Obj));
+}
+
+class SparseTable metaclass SparseMeta extends Class {
+}
+    

@@ -1,0 +1,19 @@
+digraph {
+  rankdir="BT"
+0[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Printer</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">printerId</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">Str</font></td></tr><tr> <td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">maxPrice</font></td><td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">200</font></td></tr><tr> <td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">minPrice</font></td><td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">100</font></td></tr></table>>,shape=none];
+1[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">ProductType</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">maxPrice</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">Int</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">minPrice</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">Int</font></td></tr></table>>,shape=box];
+2[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Static</font></td></tr></table>>,shape=box];
+3[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">Class</font></td></tr><tr> <td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">daemons</font></td><td bgcolor="powderblue"><font point-size="10" face="INCONSOLATA">[Function]</font></td></tr></table>>,shape=box];
+4[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="white" colspan="2"><font face="INCONSOLATA" point-size="15">Classifier</font></td></tr></table>>,shape=box];
+5[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="1"><tr><td bgcolor="pink" colspan="2"><font face="INCONSOLATA" point-size="15">StaticMOP</font></td></tr></table>>,shape=box];
+6[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="0"><tr><td bgcolor="violet" colspan="2"><font face="INCONSOLATA" point-size="15"> :Printer</font></td></tr><tr> <td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">printerId</font></td><td bgcolor="yellowgreen"><font point-size="10" face="INCONSOLATA">p1</font></td></tr></table>>,shape=none];
+3 -> 3[penwidth="2" style=dashed arrowhead=vee];
+4 -> 4[penwidth="2" label=<<font face="INCONSOLATA">::supers</font>>];
+3 -> 4[penwidth="2" arrowhead=empty];
+2 -> 3[penwidth="2" arrowhead=empty];
+1 -> 2[penwidth="2" style=dashed arrowhead=vee];
+5 -> 3[penwidth="2" arrowhead=empty];
+1 -> 5[penwidth="2" arrowhead=empty];
+0 -> 1[penwidth="2" style=dashed arrowhead=vee];
+6 -> 0[penwidth="2" style=dashed arrowhead=vee];
+}
