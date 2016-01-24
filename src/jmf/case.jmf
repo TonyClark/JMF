@@ -1,0 +1,19 @@
+test1(x:Int):Str =
+  case x {
+    1 -> 'one';
+    2 -> 'two'
+    else 'three'
+  }
+
+test2(x:Int,y:Int):Str =
+  case x,y {
+    a,a -> 'same'
+    else 'different'
+  }
+    
+test3(c:Obj):[Attribute] =
+  case c {
+    Class(name,att1:_,supers) ->
+       [att1]
+    else []
+  }

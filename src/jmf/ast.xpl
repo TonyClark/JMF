@@ -1,4 +1,4 @@
-export Apply,Arm,Attribute,Bin,Binding,Block,Bool,Case,Class,Cnstr,Find,For,Formal,Get,If,Import,Int,Let,List,ListType,Lookup,Method,NamedType,Op,Package,PStr,Send,Set,Slot,TplvlSet,Str,TplvlBind,TplvlExp,Update,Var,get,send
+export Apply,Arm,Attribute,Bin,Binding,Block,Bool,Case,Class,Cnstr,Find,For,Formal,Get,If,Import,Int,Let,List,ListType,Lookup,Method,NamedType,Op,Package,PBool,PCons,PCnstr,PInt,PList,PStr,PVar,Send,Set,Slot,TplvlSet,Str,TplvlBind,TplvlExp,Update,Var,get,send
 
 Apply               = 'ast.Apply'.java()
 Arm                 = 'ast.Arm'.java()
@@ -26,7 +26,13 @@ Method              = 'ast.Method'.java()
 NamedType           = 'ast.NamedType'.java()
 Op                  = 'ast.Op'.java()
 Package             = 'ast.Package'.java()
+PBool               = 'ast.PBool'.java()
+PCons               = 'ast.PCons'.java()
+PCnstr              = 'ast.PCnstr'.java()
+PInt                = 'ast.PInt'.java()
 PStr                = 'ast.PStr'.java()
+PList               = 'ast.PList'.java()
+PVar                = 'ast.PVar'.java()
 TplvlSet            = 'ast.TplvlSet'.java()
 Set                 = 'ast.Set'.java()
 Slot                = 'ast.Slot'.java()

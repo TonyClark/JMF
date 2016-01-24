@@ -1,6 +1,7 @@
 package ast;
 
-import static value.Obj.Str;
+import static value.Obj.Bool;
+import static value.Obj.asBool;
 
 import java.util.function.BiFunction;
 
@@ -9,25 +10,25 @@ import exp.BoaConstructor;
 import value.Obj;
 
 @BoaConstructor(fields = { "value" })
-public class PStr extends Pattern {
+public class PBool extends Pattern {
 
-  public String value;
+  public boolean value;
 
-  public PStr() {
+  public PBool() {
   }
 
   public String toString() {
-    return "PStr(" + value + ")";
+    return "PBool(" + value + ")";
   }
 
   public Env<String, Obj> match(Obj v, Obj self, Env<String, Obj> env) {
-    if (v.toString().equals(value))
+    if (asBool(v) == value)
       return env;
     else return null;
   }
 
   public Obj typeCheck(Obj tval, Obj tself, Env<String, Obj> tenv, Env<String, Obj> env, BiFunction<Obj, Env<String, Obj>, Obj> results) {
-    return results.apply(Str, tenv);
+    return results.apply(Bool, tenv);
   }
 
 }

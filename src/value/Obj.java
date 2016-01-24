@@ -533,9 +533,7 @@ public interface Obj extends Serializable {
     Class.extendSlot("supers", Inherits("constructors", append, append));
     Class.extendSlot("supers", Inherits("attributes", append, append));
     Class.extendSlot("attributes", Attribute("isAbstract", Bool));
-    System.out.println("HERE1");
     Class.extendSlot("attributes", Attribute("daemons", ListOf(Function)));
-    System.out.println("HERE2 " + Class.send("allAttributes"));
     set(send(Class, "getOp", Str("new")), "isVarArgs", theObjTrue);
     set(send(Class, "getOp", Str("invoke")), "isVarArgs", theObjTrue);
 

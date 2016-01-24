@@ -1,6 +1,7 @@
 package ast;
 
-import static value.Obj.Str;
+import static value.Obj.Int;
+import static value.Obj.asInt;
 
 import java.util.function.BiFunction;
 
@@ -9,25 +10,25 @@ import exp.BoaConstructor;
 import value.Obj;
 
 @BoaConstructor(fields = { "value" })
-public class PStr extends Pattern {
+public class PInt extends Pattern {
 
-  public String value;
+  public int value;
 
-  public PStr() {
+  public PInt() {
   }
 
   public String toString() {
-    return "PStr(" + value + ")";
+    return "PInt(" + value + ")";
   }
 
   public Env<String, Obj> match(Obj v, Obj self, Env<String, Obj> env) {
-    if (v.toString().equals(value))
+    if (asInt(v) == value)
       return env;
     else return null;
   }
 
   public Obj typeCheck(Obj tval, Obj tself, Env<String, Obj> tenv, Env<String, Obj> env, BiFunction<Obj, Env<String, Obj>, Obj> results) {
-    return results.apply(Str, tenv);
+    return results.apply(Int, tenv);
   }
 
 }
